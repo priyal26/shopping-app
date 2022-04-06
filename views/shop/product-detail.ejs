@@ -1,55 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
+<%- include('../includes/head.ejs') %>
+    </head>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>
-        <%= pageTitle%>
-    </title>
-    <link rel="stylesheet" href="/css/main.css">
-    <link rel="stylesheet" href="/css/product.css">
-</head>
+    <body>
+        <%- include('../includes/navigation.ejs') %>
+        <main class="centered">
+            <h1><%= product.title %></h1>
+            <hr>
+            <div>
+                <img src="<%= product.imageUrl %>" alt="<%= product.title %>">
+            </div>
+            <h2><%= product.price %></h2>
+            <p><%= product.description %></p>
+            <form action="/cart" method="post">
+                <button class="btn" type="submit">Add To Cart</button>
+                <input type="hidden" name="productId" value="<%= product.id%>">
 
-<body>
-    <header class="main-header">
-        <nav class="main-header__nav">
-            <ul class="main-header__item-list">
-                <li class="main-header__item">
-                    <a class="<%= path ==='/' ? 'active' : '' %>" href="/">Shop</a>
-                </li>
-
-                <li class="main-header__item">
-                    <a class="<%= path === '/products' ? 'active': '' %>" href="/products">Products</a>
-                </li>
-
-                <li class="main-header__item">
-                    <a class="<%= path === '/cart' ? 'active': '' %>" href="/cart">Cart</a>
-                </li>
-
-                <li class="main-header__item">
-                    <a class="<%= path ==='/admin/add-product' ? 'active' : '' %>" href="/admin/add-product">Add
-                        Product</a>
-                </li>
-
-                <li class="main-header__item">
-                    <a class="<%= path === '/admin/products' ? 'active': '' %>" href="/">Admin Products</a>
-                </li>
-
-
-            </ul>
-        </nav>
-    </header>
-    <main class="centered">
-    <h1><%= product.title %></h1>
-    <hr>
-    <div> 
-        <img src="<%= product.imageUrl %>" alt="<%= product.title %>">
-    </div>
-    <h2><%= product.price %></h2>
-    <p><%= product.description %></p>
-    </main>
-</body>
-
-</html>
+            </form>
+           
+        </main>
+        <%- include('../includes/end.ejs') %>   

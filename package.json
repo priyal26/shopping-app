@@ -1,22 +1,28 @@
 {
-  "name": "shopping_application",
+  "name": "shop-app",
   "version": "1.0.0",
-  "description": "Shop app using nodejs",
+  "description": "",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon app.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/priyal26/shopping-app.git"
+  },
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "nodemon": "^2.0.15"
+  "bugs": {
+    "url": "https://github.com/priyal26/shopping-app/issues"
   },
+  "homepage": "https://github.com/priyal26/shopping-app#readme",
   "dependencies": {
-    "body-parser": "^1.19.2",
+    "body-parser": "^1.20.0",
     "ejs": "^3.1.6",
     "express": "^4.17.3",
-    "express-handlebars": "^6.0.3",
+    "express-handlebars": "^6.0.4",
+    "nodemon": "^2.0.15",
     "pug": "^3.0.2"
   }
 }
